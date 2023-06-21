@@ -8,23 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var tabCount = 0
+   @State private var name = ""
     
     var body: some View {
-//        NavigationView {
-//            Form{
-//                Section {
-//                    Text("Hello, world!")
-//                }
-//            }
-//            .navigationTitle("SwiftUI")
-//            .navigationBarTitleDisplayMode(.inline)
-//        }
-        Button("Tap Count: \(tabCount)"){
-            tabCount += 1
-        }
-        
-    }
+           Form {
+               TextField("Enter your name", text: $name)
+               Text("Your name is \(name)")
+           }
+       }
 }
 
 struct ContentView_Previews: PreviewProvider {
