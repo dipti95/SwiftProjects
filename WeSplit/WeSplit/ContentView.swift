@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var tabCount = 0
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+//        NavigationView {
+//            Form{
+//                Section {
+//                    Text("Hello, world!")
+//                }
+//            }
+//            .navigationTitle("SwiftUI")
+//            .navigationBarTitleDisplayMode(.inline)
+//        }
+        Button("Tap Count: \(tabCount)"){
+            tabCount += 1
         }
-        .padding()
+        
     }
 }
 
