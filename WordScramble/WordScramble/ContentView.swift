@@ -15,10 +15,12 @@ struct ContentView: View {
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
+    @State private var score = 0
     
     var body: some View {
         NavigationView {
                List {
+                   Section(header: Text("Score: \(score)")) {}
                    Section {
                        TextField("Enter your word", text: $newWord)
                            .textInputAutocapitalization(.never)
@@ -35,6 +37,11 @@ struct ContentView: View {
                .navigationTitle(rootWord)
                .onSubmit(addNewWord)
                .onAppear(perform: startGame)
+               .toolbar {
+                   Button(action: startAgain, label: {
+                       Image(systemName: "arrow.counterclockwise")
+                   }).padding(.trailing)
+               }
                .alert(errorTitle, isPresented: $showingError) {
                    Button("OK", role: .cancel) { }
                } message: {
@@ -48,7 +55,12 @@ struct ContentView: View {
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         
         guard answer.count > 0 else { return }
-                
+        
+        guard answer.count > 2 else {
+            wordError(title: "Word have less than three letters", message: "Guess the word with more than two letters.")
+            return
+        }
+
         guard isOriginal(word: answer) else {
             wordError(title: "Word used already", message: "Be more original")
             return
@@ -67,6 +79,8 @@ struct ContentView: View {
         withAnimation {
             usedWords.insert(answer, at: 0)
         }
+        
+        score += 1
        
         newWord = ""
     }
@@ -114,6 +128,18 @@ struct ContentView: View {
         errorTitle = title
         errorMessage = message
         showingError = true
+    }
+    
+    func startAgain(){
+        
+        usedWords = [String]()
+        rootWord = ""
+        newWord = ""
+        errorTitle = ""
+        errorMessage = ""
+        showingError = false
+        score  =  0
+        startGame()
     }
 }
 
