@@ -7,47 +7,44 @@
 
 import SwiftUI
 
-
-struct SecondView: View {
-    @Environment(\.dismiss) var dismiss
-    
-   
-
-   var body: some View {
-       Button("Dismiss") {
-           dismiss()
-       }
-   }
-}
-
 struct ContentView: View {
-    @State private var numbers = [Int]()
-    @State private var currentNumber = 1
-    
+    @StateObject var expenses = Expenses()
+    @State private var showingAddExpense = false
+
     var body: some View {
         NavigationView {
-            VStack {
-                List {
-                    ForEach(numbers, id: \.self) {
-                        Text("Row \($0)")
+            List {
+                ForEach(expenses.items) { item in
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(item.name)
+                                .font(.headline)
+                            Text(item.type)
+                        }
+
+                        Spacer()
+                        Text(item.amount, format: .currency(code: "USD"))
                     }
-                    .onDelete(perform: removeRows)
                 }
-                Button("Add Number") {
-                    numbers.append(currentNumber)
-                    currentNumber += 1
+                .onDelete(perform: removeItems)
+            }
+            .navigationTitle("iExpense")
+            .toolbar {
+                Button {
+                    showingAddExpense = true
+                } label: {
+                    Image(systemName: "plus")
                 }
             }
-            .navigationTitle("onDelete()")
-            .toolbar {
-                EditButton()
-              }
+            .sheet(isPresented: $showingAddExpense) {
+                AddView(expenses: expenses)
+                
+            }
         }
     }
-
     
-    func removeRows(at offsets: IndexSet) {
-        numbers.remove(atOffsets: offsets)
+    func removeItems(at offsets: IndexSet) {
+        expenses.items.remove(atOffsets: offsets)
     }
 }
 
