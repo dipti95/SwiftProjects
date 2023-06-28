@@ -13,7 +13,7 @@ struct AddView: View {
     
     @State private var name = ""
     @State private var type = "Personal"
-    @State private var amount = 0
+    @State private var amount = 0.0
 
     let types = ["Business", "Personal"]
 
@@ -28,7 +28,7 @@ struct AddView: View {
                     }
                 }
 
-                TextField("Amount", value: $amount, format: .currency(code: "USD"))
+                TextField("Amount", value: $amount, format: currencyFormatter(Locale.current))
                     .keyboardType(.decimalPad)
             }
             .navigationTitle("Add new expense")
@@ -41,6 +41,11 @@ struct AddView: View {
             }
         }
     }
+    
+    func currencyFormatter(_ locale: Locale) -> FloatingPointFormatStyle<Double>.Currency {
+            .currency(code: locale.currency?.identifier ?? "USD")
+        }
+
 }
 
 struct AddView_Previews: PreviewProvider {

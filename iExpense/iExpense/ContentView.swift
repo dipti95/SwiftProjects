@@ -23,7 +23,9 @@ struct ContentView: View {
                         }
 
                         Spacer()
-                        Text(item.amount, format: .currency(code: "USD"))
+                        Text(item.amount, format: currencyFormatter(Locale.current))
+                            .foregroundColor(item.amount <= 10 || item.amount < 10   ? .black : .red)
+                    
                     }
                 }
                 .onDelete(perform: removeItems)
@@ -46,6 +48,11 @@ struct ContentView: View {
     func removeItems(at offsets: IndexSet) {
         expenses.items.remove(atOffsets: offsets)
     }
+    
+    func currencyFormatter(_ locale: Locale) -> FloatingPointFormatStyle<Double>.Currency {
+            .currency(code: locale.currency?.identifier ?? "USD")
+        }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
