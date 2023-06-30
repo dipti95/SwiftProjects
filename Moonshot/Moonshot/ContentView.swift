@@ -7,11 +7,20 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
     var body: some View {
-        Image("Example")
-            .resizable()
-            .frame(width: 300, height: 300)
+        NavigationView {
+            List(0..<100) { row in
+                    NavigationLink {
+                        Text("Detail \(row)")
+                    } label: {
+                        Text("Row \(row)")
+                    }
+                }
+                .navigationTitle("SwiftUI")
+        }
 
     }
 }
