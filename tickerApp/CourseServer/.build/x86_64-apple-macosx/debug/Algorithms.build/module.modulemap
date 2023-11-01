@@ -1,0 +1,4 @@
+module Algorithms {
+    header "/Users/dipti/repos/IOS_DEVELOPMENT/SwiftProjects/tickerApp/CourseServer/.build/x86_64-apple-macosx/debug/Algorithms.build/Algorithms-Swift.h"
+    requires objc
+}

@@ -1,0 +1,4 @@
+module Numerics {
+    header "/Users/dipti/repos/IOS_DEVELOPMENT/SwiftProjects/tickerApp/CourseServer/.build/x86_64-apple-macosx/debug/Numerics.build/Numerics-Swift.h"
+    requires objc
+}
