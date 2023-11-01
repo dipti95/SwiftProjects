@@ -1,4 +1,0 @@
-module MultipartKit {
-    header "/Users/dipti/repos/IOS_DEVELOPMENT/SwiftProjects/tickerApp/CourseServer/.build/x86_64-apple-macosx/debug/MultipartKit.build/MultipartKit-Swift.h"
-    requires objc
-}

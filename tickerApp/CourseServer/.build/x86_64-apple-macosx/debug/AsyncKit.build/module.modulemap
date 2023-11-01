@@ -1,4 +1,0 @@
-module AsyncKit {
-    header "/Users/dipti/repos/IOS_DEVELOPMENT/SwiftProjects/tickerApp/CourseServer/.build/x86_64-apple-macosx/debug/AsyncKit.build/AsyncKit-Swift.h"
-    requires objc
-}

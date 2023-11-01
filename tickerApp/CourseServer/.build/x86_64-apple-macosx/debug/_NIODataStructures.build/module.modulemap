@@ -1,4 +1,0 @@
-module _NIODataStructures {
-    header "/Users/dipti/repos/IOS_DEVELOPMENT/SwiftProjects/tickerApp/CourseServer/.build/x86_64-apple-macosx/debug/_NIODataStructures.build/_NIODataStructures-Swift.h"
-    requires objc
-}

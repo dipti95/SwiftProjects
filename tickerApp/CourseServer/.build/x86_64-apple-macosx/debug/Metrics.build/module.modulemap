@@ -1,4 +1,0 @@
-module Metrics {
-    header "/Users/dipti/repos/IOS_DEVELOPMENT/SwiftProjects/tickerApp/CourseServer/.build/x86_64-apple-macosx/debug/Metrics.build/Metrics-Swift.h"
-    requires objc
-}

@@ -1,4 +1,0 @@
-module HTTPTypes {
-    header "/Users/dipti/repos/IOS_DEVELOPMENT/SwiftProjects/tickerApp/CourseServer/.build/x86_64-apple-macosx/debug/HTTPTypes.build/HTTPTypes-Swift.h"
-    requires objc
-}

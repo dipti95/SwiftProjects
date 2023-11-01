@@ -1,4 +1,0 @@
-module NIOTLS {
-    header "/Users/dipti/repos/IOS_DEVELOPMENT/SwiftProjects/tickerApp/CourseServer/.build/x86_64-apple-macosx/debug/NIOTLS.build/NIOTLS-Swift.h"
-    requires objc
-}

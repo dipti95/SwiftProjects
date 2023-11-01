@@ -1,4 +1,0 @@
-module NIOHPACK {
-    header "/Users/dipti/repos/IOS_DEVELOPMENT/SwiftProjects/tickerApp/CourseServer/.build/x86_64-apple-macosx/debug/NIOHPACK.build/NIOHPACK-Swift.h"
-    requires objc
-}

@@ -1,4 +1,0 @@
-module DequeModule {
-    header "/Users/dipti/repos/IOS_DEVELOPMENT/SwiftProjects/tickerApp/CourseServer/.build/x86_64-apple-macosx/debug/DequeModule.build/DequeModule-Swift.h"
-    requires objc
-}

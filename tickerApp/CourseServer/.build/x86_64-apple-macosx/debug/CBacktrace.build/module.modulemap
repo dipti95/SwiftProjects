@@ -1,4 +1,0 @@
-module CBacktrace {
-    umbrella "/Users/dipti/repos/IOS_DEVELOPMENT/SwiftProjects/tickerApp/CourseServer/.build/checkouts/swift-backtrace/Sources/CBacktrace/include"
-    export *
-}

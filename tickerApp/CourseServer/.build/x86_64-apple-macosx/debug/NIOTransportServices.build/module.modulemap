@@ -1,4 +1,0 @@
-module NIOTransportServices {
-    header "/Users/dipti/repos/IOS_DEVELOPMENT/SwiftProjects/tickerApp/CourseServer/.build/x86_64-apple-macosx/debug/NIOTransportServices.build/NIOTransportServices-Swift.h"
-    requires objc
-}
